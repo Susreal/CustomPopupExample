@@ -10,6 +10,7 @@ struct OverlayModifier<OverlayView: View>: ViewModifier {
     let overlayView: OverlayView
     
     init(isPresented: Binding<Bool>, @ViewBuilder overlayView: @escaping () -> OverlayView) {
+        print("[OverlayModifier] isPresented: \(isPresented.wrappedValue)")
         self._isPresented = isPresented
         self.overlayView = overlayView()
     }

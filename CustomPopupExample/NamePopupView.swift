@@ -9,6 +9,11 @@ struct NamePopupView: View {
     @Binding var isPresented: Bool
     @State var text = ""
     
+    init(isPresented: Binding<Bool>) {
+        print("[NamePopupView] isPresented: \(isPresented.wrappedValue)")
+        self._isPresented = isPresented
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
